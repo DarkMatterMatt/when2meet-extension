@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Unofficial extension for when2meet.com</h1>
+<p>Drag this link to your bookmarks bar. Then go to <a style="text-decoration:none" href="https://when2meet.com">when2meet.com</a> and click on the bookmark. Buttons will be added in the top right corner.</p>
+
+<div>
+    <code><a id="bookmarklet" target="_blank">when2meet-extension</a></code>
+</div>
+
+<script>
+    const $bookmarklet = document.getElementById('bookmarklet');
+    const script = `window._dmm||(window._dmm=1,fetch("https://darkmattermatt.github.io/when2meet-extension/extension.js").then(a=>a.text()).then(eval))`;
+    $bookmarklet.href = `javascript:${encodeURIComponent(`${script};void 0`)}`;
+</script>
+
+</body>
+</html>
